@@ -23,27 +23,11 @@ const Header = (props: Props) => {
 				}}
 				className="flex flex-row items-center"
 			>
-				<SocialIcon 
-                url="https://www.linkedin.com/in/uladzimir-vakula"
-                fgColor="gray"
-                bgColor="transparent" />
-				<SocialIcon 
-                url="https://github.com/vakulio"
-                fgColor="gray"
-                bgColor="transparent"
-                 />
-				<SocialIcon 
-                url="https://t.me/Uwaldemar"
-                fgColor="gray"
-                bgColor="transparent" />
-				<SocialIcon 
-                url="https://www.facebook.com/vakulio"
-                fgColor="gray"
-                bgColor="transparent" />
-				<SocialIcon 
-                url="https://www.instagram.com/mr.v_men/"
-                fgColor="gray"
-                bgColor="transparent" />
+				<SocialIcon url="https://www.linkedin.com/in/uladzimir-vakula" fgColor="gray" bgColor="transparent" />
+				<SocialIcon url="https://github.com/vakulio" fgColor="gray" bgColor="transparent" />
+				<SocialIcon url="https://t.me/Uwaldemar" fgColor="gray" bgColor="transparent" />
+				<SocialIcon url="https://www.facebook.com/vakulio" fgColor="gray" bgColor="transparent" />
+				<SocialIcon url="https://www.instagram.com/mr.v_men/" fgColor="gray" bgColor="transparent" />
 			</motion.div>
 
 			<motion.div
