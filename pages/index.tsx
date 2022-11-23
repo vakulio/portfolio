@@ -1,5 +1,7 @@
 import { NextPage } from 'next'
 import Head from 'next/head'
+import Header from '../components/Header'
+import Person from '../components/Person'
 
 
 const Home: NextPage = () => {
@@ -8,7 +10,11 @@ const Home: NextPage = () => {
       <Head>
         <title>Vakulio Portfolio</title>
       </Head>
-      <h1 className='text-left top-1 decoration-clone'>dfds</h1>
+      <Header/>
+      <section>
+        <Person/>
+      </section>
+
     </div>
   )
 }
