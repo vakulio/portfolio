@@ -1,5 +1,6 @@
 import { NextPage } from 'next'
 import Head from 'next/head'
+import About from '../components/About'
 import Header from '../components/Header'
 import Person from '../components/Person'
 
@@ -13,6 +14,9 @@ const Home: NextPage = () => {
       <Header/>
       <section id='person' className='snap-center'>
         <Person/>
+      </section>
+      <section id='about' className='snap-center'>
+        <About/>
       </section>
 
     </div>

@@ -1,3 +1,4 @@
+import Link from "next/link"
 import React from "react"
 import { Cursor, useTypewriter } from "react-simple-typewriter"
 import BackgroundCircle from "./BackgroundCircle"
@@ -19,16 +20,24 @@ const Person = (props: Props) => {
 			/>
 			<BackgroundCircle />
 			<div className="relative top-5">
-				<h2 className="text-sm uppercase text-gray-500 pb-2 tracking-[15px]" >Fullstack Developer</h2>
+				<h2 className="text-sm uppercase text-gray-500 pb-2 tracking-[15px]">Fullstack Developer</h2>
 				<h1 className="text-5xl lg:text-6xl font-semibold px-10">
 					<span>{text}</span>
 					<Cursor cursorColor="green" />
 				</h1>
 				<div className="pt-5">
-					<button className="personButton">About</button>
-					<button className="personButton">Experience</button>
-					<button className="personButton">Skills</button>
-					<button className="personButton">Projects</button>
+					<Link href='#about'>
+						<button className="personButton">About</button>
+					</Link>
+					<Link href='#exp'>
+						<button className="personButton">Experience</button>
+					</Link>
+					<Link href='#skills'>
+						<button className="personButton">Skills</button>
+					</Link>
+					<Link href='#projects'>
+						<button className="personButton">Projects</button>
+					</Link>
 				</div>
 			</div>
 		</div>
