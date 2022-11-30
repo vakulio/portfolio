@@ -4,7 +4,7 @@
 /node_modules
 /.pnp
 .pnp.js
-
+/sanity/node_modules
 # testing
 /coverage
 
@@ -12,6 +12,7 @@
 /.next/
 /out/
 
+sanity/node_modules
 # production
 /build
 
