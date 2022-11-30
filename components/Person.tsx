@@ -1,13 +1,17 @@
 import Link from "next/link"
 import React from "react"
 import { Cursor, useTypewriter } from "react-simple-typewriter"
+import { urlFor } from "../sanity"
+import { PageInfo } from "../typings"
 import BackgroundCircle from "./BackgroundCircle"
 
-type Props = {}
+type Props = {
+	pageInfo: PageInfo
+}
 
-export const Person = (props: Props) => {
+export const Person = ({pageInfo}: Props) => {
 	const [text, count] = useTypewriter({
-		words: ["Hi, my name's Uladimir", "I'm JavaScript Developer"],
+		words: [`Hi, my name's ${pageInfo.name}`, `I'm ${pageInfo.role}`],
 		loop: true,
 		delaySpeed: 1500
 	})
@@ -15,12 +19,12 @@ export const Person = (props: Props) => {
 	return (
 		<div className="h-screen flex flex-col space-y-8 items-center justify-center text-center overflow-hidden">
 			<img
-				src="https://media-exp1.licdn.com/dms/image/C4D03AQFIMMEh8EO0dw/profile-displayphoto-shrink_400_400/0/1659722447675?e=1674691200&v=beta&t=6YElUN31eXzXnrXpjM8-RDt-SxtrNPNA9uvoEL9wUEg"
+				src={urlFor(pageInfo?.personImage).url()}
 				className="relative rounded-full h-32 w-32 mx-auto overflow-hidden top-20 z-0"
 			/>
 			<BackgroundCircle />
 			<div className="relative top-5">
-				<h2 className="text-sm uppercase text-gray-500 pb-2 tracking-[15px]">Fullstack Developer</h2>
+				<h2 className="text-sm uppercase text-gray-500 pb-2 tracking-[15px]">{pageInfo.role}</h2>
 				<h1 className="text-5xl lg:text-6xl font-semibold px-10">
 					<span>{text}</span>
 					<Cursor cursorColor="green" />
