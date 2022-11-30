@@ -3,7 +3,7 @@ import { motion } from "framer-motion"
 
 type Props = {}
 
-const About = (props: Props) => {
+export const About = (props: Props) => {
 	return (
 		<motion.div 
         initial={{ opacity: 0}}
@@ -38,4 +38,3 @@ const About = (props: Props) => {
 	)
 }
 
-export default About

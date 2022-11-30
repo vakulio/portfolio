@@ -5,7 +5,7 @@ import BackgroundCircle from "./BackgroundCircle"
 
 type Props = {}
 
-const Person = (props: Props) => {
+export const Person = (props: Props) => {
 	const [text, count] = useTypewriter({
 		words: ["Hi, my name's Uladimir", "I'm JavaScript Developer"],
 		loop: true,
@@ -43,5 +43,3 @@ const Person = (props: Props) => {
 		</div>
 	)
 }
-
-export default Person
