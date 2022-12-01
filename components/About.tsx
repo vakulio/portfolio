@@ -7,7 +7,7 @@ type Props = {
 	pageInfo: PageInfo
 }
 
-export const About = ({pageInfo}: Props) => {
+const About = ({pageInfo}: Props) => {
 	return (
 		<motion.div 
         initial={{ opacity: 0}}
@@ -40,3 +40,4 @@ export const About = ({pageInfo}: Props) => {
 	)
 }
 
+export default About

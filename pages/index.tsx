@@ -1,13 +1,21 @@
-import { GetStaticProps, NextPage } from "next"
+import { GetServerSideProps } from "next"
 import Head from "next/head"
 import Link from "next/link"
-import { WorkExp, About, Projects, Header, Person, Skills, ContactMe } from "../components"
+import Image from "next/image"
+import { urlFor } from "../sanity"
 import { Experience, PageInfo, Project, Skill, Social } from "../typings"
 import { fetchExperience } from "../utils/fetchExperience"
 import { fetchPageInfo } from "../utils/fetchPageInfo"
 import { fetchProjects } from "../utils/fetchProjects"
 import { fetchSkills } from "../utils/fetchSkills"
 import { fetchSocials } from "../utils/fetchSocials"
+import Header from "../components/Header"
+import Person from "../components/Person"
+import About from "../components/About"
+import WorkExp from "../components/WorkExp"
+import Skills from "../components/Skills"
+import Projects from "../components/Projects"
+import ContactMe from "../components/ContactMe"
 
 type Props = {
 	pageInfo: PageInfo
@@ -17,11 +25,12 @@ type Props = {
 	socials: Social[]
 }
 
+
 const Home = ({ pageInfo, experience, skills, projects, socials }: Props) => {
 	return (
 		<div className="bg-[rgb(36,36,36)] text-white h-screen snap-y snap-mandatory overflow-scroll z-0 overflow-x-hidden scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80">
 			<Head>
-				<title>Vakulio Portfolio</title>
+				<title>{pageInfo?.name} Portfolio</title>
 			</Head>
 			<Header socials={socials} />
 			<section id="person" className="snap-center">
@@ -34,10 +43,10 @@ const Home = ({ pageInfo, experience, skills, projects, socials }: Props) => {
 				<WorkExp experience={experience} />
 			</section>
 			<section id="skills" className="snap-start">
-				<Skills />
+				<Skills skills={skills} />
 			</section>
 			<section id="projects" className="snap-start">
-				<Projects />
+				<Projects projects={projects} />
 			</section>
 			<section id="contact" className="snap-start">
 				<ContactMe />
@@ -45,7 +54,7 @@ const Home = ({ pageInfo, experience, skills, projects, socials }: Props) => {
 			<Link href="#person">
 				<footer className="sticky bottom-5 w-full cursor-pointer">
 					<div className="flex items-center justify-center">
-						<img className="h-10 w-10 rounded-full filter grayscale hover:grayscale-0 cursor-pointer" src="#" alt="personPhoto" />
+						<Image width={50} height={50} className="w-10 h-10 rounded-full filter grayscale hover:grayscale-0 cursor-pointer" src={urlFor(pageInfo.personImage).url()} alt="personPhoto" />
 					</div>
 				</footer>
 			</Link>
@@ -55,7 +64,7 @@ const Home = ({ pageInfo, experience, skills, projects, socials }: Props) => {
 
 export default Home
 
-export const getStaticProps: GetStaticProps<Props> = async () => {
+export const getServerSideProps: GetServerSideProps<Props> = async () => {
 	const pageInfo: PageInfo = await fetchPageInfo()
 	const experience: Experience[] = await fetchExperience()
 	const skills: Skill[] = await fetchSkills()
@@ -70,6 +79,6 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
 			projects,
 			socials
 		},
-		revalidate: 300,
+		revalidate: 300
 	}
 }

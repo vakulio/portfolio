@@ -1,3 +1,4 @@
+import Image from "next/image"
 import Link from "next/link"
 import React from "react"
 import { Cursor, useTypewriter } from "react-simple-typewriter"
@@ -9,7 +10,7 @@ type Props = {
 	pageInfo: PageInfo
 }
 
-export const Person = ({pageInfo}: Props) => {
+const Person = ({ pageInfo }: Props) => {
 	const [text, count] = useTypewriter({
 		words: [`Hi, my name's ${pageInfo.name}`, `I'm ${pageInfo.role}`],
 		loop: true,
@@ -18,10 +19,7 @@ export const Person = ({pageInfo}: Props) => {
 
 	return (
 		<div className="h-screen flex flex-col space-y-8 items-center justify-center text-center overflow-hidden">
-			<img
-				src={urlFor(pageInfo?.personImage).url()}
-				className="relative rounded-full h-32 w-32 mx-auto overflow-hidden top-20 z-0"
-			/>
+			<Image priority height={150} width={150} src={urlFor(pageInfo?.personImage).url()} className="relative rounded-full h-32 w-32 mx-auto overflow-hidden top-20 z-0" alt={pageInfo.name} />
 			<BackgroundCircle />
 			<div className="relative top-5">
 				<h2 className="text-sm uppercase text-gray-500 pb-2 tracking-[15px]">{pageInfo.role}</h2>
@@ -30,16 +28,16 @@ export const Person = ({pageInfo}: Props) => {
 					<Cursor cursorColor="green" />
 				</h1>
 				<div className="pt-5">
-					<Link href='#about'>
+					<Link href="#about">
 						<button className="personButton">About</button>
 					</Link>
-					<Link href='#exp'>
+					<Link href="#exp">
 						<button className="personButton">Experience</button>
 					</Link>
-					<Link href='#skills'>
+					<Link href="#skills">
 						<button className="personButton">Skills</button>
 					</Link>
-					<Link href='#projects'>
+					<Link href="#projects">
 						<button className="personButton">Projects</button>
 					</Link>
 				</div>
@@ -47,3 +45,5 @@ export const Person = ({pageInfo}: Props) => {
 		</div>
 	)
 }
+
+export default Person
