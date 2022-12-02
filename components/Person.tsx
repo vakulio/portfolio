@@ -12,17 +12,17 @@ type Props = {
 
 const Person = ({ pageInfo }: Props) => {
 	const [text, count] = useTypewriter({
-		words: [`Hi, my name's ${pageInfo.name}`, `I'm ${pageInfo.role}`],
+		words: [`Hi, my name's ${pageInfo?.name}`, `I'm ${pageInfo.role}`],
 		loop: true,
 		delaySpeed: 1500
 	})
 
 	return (
 		<div className="h-screen flex flex-col space-y-8 items-center justify-center text-center overflow-hidden">
-			<Image priority height={150} width={150} src={urlFor(pageInfo?.personImage).url()} className="relative rounded-full h-32 w-32 mx-auto overflow-hidden top-20 z-0" alt={pageInfo.name} />
+			<Image priority height={150} width={150} src={urlFor(pageInfo?.personImage).url()} className="relative rounded-full h-32 w-32 mx-auto overflow-hidden top-20 z-0" alt={pageInfo?.name} />
 			<BackgroundCircle />
 			<div className="relative top-5">
-				<h2 className="text-sm uppercase text-gray-500 pb-2 tracking-[15px]">{pageInfo.role}</h2>
+				<h2 className="text-sm uppercase text-gray-500 pb-2 tracking-[15px]">{pageInfo?.role}</h2>
 				<h1 className="text-5xl lg:text-6xl font-semibold px-10">
 					<span>{text}</span>
 					<Cursor cursorColor="green" />

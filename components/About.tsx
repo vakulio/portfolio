@@ -33,7 +33,7 @@ const About = ({pageInfo}: Props) => {
 					Here is a little <span className="underline decoration-[#F7AB0A]/30">background</span>
 				</h4>
 				<p className="text-sm">
-					{pageInfo.backgroundInfo}
+					{pageInfo?.backgroundInfo}
 				</p>
 			</div>
 		</motion.div>

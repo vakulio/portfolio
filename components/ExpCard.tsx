@@ -28,7 +28,7 @@ const ExpCard = ({ experienceOne }: Props) => {
 				}}
 				className="w-32 h-32  bg-white rounded-3xl xl:w-[200px] xl:h-[200px] object-cover object-center"
 				src={urlFor(experienceOne?.companyImage).url()}
-				alt="senama"
+				alt={experienceOne?.company}
 			/>
 			<div className="px-0 md:px-10">
 				<h4 className="text-4xl font-light">Fullstack developer</h4>
