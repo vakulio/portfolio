@@ -28,17 +28,17 @@ const ContactMe = (props: Props) => {
 			<div className="flex flex-col space-y-10">
 				<h4 className="text-4xl font-semibold text-center">I have got just what you need.</h4>
 				<div className="space-y-10">
-					<div className="flex items-center space-x-5 justify-center">
+					{/* <div className="flex items-center space-x-5 justify-center">
 						<PhoneIcon className="text-[#f7ab0a] h-7 w-7 animate-pulse" />
-						<p className="text-2xl">+375-33-6584</p>
-					</div>
+						<p className="text-2xl">+375-33-658-46-77</p>
+					</div> */}
 					<div className="flex items-center space-x-5 justify-center">
 						<EnvelopeIcon className="text-[#f7ab0a] h-7 w-7 animate-pulse" />
 						<p className="text-2xl">vlad.vakula@gmail.com</p>
 					</div>
 					<div className="flex items-center space-x-5 justify-center">
 						<MapPinIcon className="text-[#f7ab0a] h-7 w-7 animate-pulse" />
-						<p className="text-2xl">Brest, Belarus</p>
+						<p className="text-2xl">Poland</p>
 					</div>
 				</div>
 				<form onSubmit={handleSubmit(onSubmit)} className="flex flex-col space-y-2 w-fit mx-auto">

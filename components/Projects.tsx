@@ -43,6 +43,7 @@ const Projects = ({ projects }: Props) => {
 							}}
 							src={urlFor(p?.image).url()}
 							alt={p.title}
+							className="h-[150px] md:h-[370px]"
 						/>
 						<div className="space-y-10 px-0 md:px-10 max-w-6xl">
 							<h4 className="text-4xl font-semibold text-center">
