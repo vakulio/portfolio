@@ -64,21 +64,21 @@ const Home = ({ pageInfo, experience, skills, projects, socials }: Props) => {
 
 export default Home
 
-export const getServerSideProps: GetServerSideProps<Props> = async () => {
-	const pageInfo: PageInfo = await fetchPageInfo()
-	const experience: Experience[] = await fetchExperience()
-	const skills: Skill[] = await fetchSkills()
-	const projects: Project[] = await fetchProjects()
-	const socials: Social[] = await fetchSocials()
+// export const getServerSideProps: GetServerSideProps<Props> = async () => {
+// 	const pageInfo: PageInfo = await fetchPageInfo()
+// 	const experience: Experience[] = await fetchExperience()
+// 	const skills: Skill[] = await fetchSkills()
+// 	const projects: Project[] = await fetchProjects()
+// 	const socials: Social[] = await fetchSocials()
 
-	return {
-		props: {
-			pageInfo,
-			experience,
-			skills,
-			projects,
-			socials
-		},
-		revalidate: 300
-	}
-}
+// 	return {
+// 		props: {
+// 			pageInfo,
+// 			experience,
+// 			skills,
+// 			projects,
+// 			socials
+// 		},
+// 		revalidate: 300
+// 	}
+// }
