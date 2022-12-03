@@ -24,7 +24,7 @@ const ContactMe = (props: Props) => {
 	}
 	return (
 		<div className="h-screen flex relative flex-col text-c enter md:text-left md:flex-row max-w-7xl px-10 justify-evenly mx-auto items-center">
-			<h3 className="absolute top-24 uppercase tracking-[20px] text-gray-500 text-2xl">Contact Me</h3>
+			<h3 className="absolute top-20 md:top-24 uppercase tracking-[20px] text-gray-500 text-2xl">Contact Me</h3>
 			<div className="flex flex-col space-y-10">
 				<h4 className="text-4xl font-semibold text-center">I have got just what you need.</h4>
 				<div className="space-y-10">
@@ -41,8 +41,8 @@ const ContactMe = (props: Props) => {
 						<p className="text-2xl">Poland</p>
 					</div>
 				</div>
-				<form onSubmit={handleSubmit(onSubmit)} className="flex flex-col space-y-2 w-fit mx-auto">
-					<div className="flex space-x-2">
+				<form onSubmit={handleSubmit(onSubmit)} className="flex flex-col w-[80%] space-y-2 md:w-fit mx-auto">
+					<div className="flex space-y-2 md:space-x-2 md:space-y-0 flex-col md:flex-row">
 						<div className="relative">
 							<input
 								{...register("name", {

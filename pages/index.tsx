@@ -52,7 +52,7 @@ const Home = ({ pageInfo, experience, skills, projects, socials }: Props) => {
 				<ContactMe />
 			</section>
 			<Link href="#person">
-				<footer className="sticky bottom-5 w-full cursor-pointer">
+				<footer className="sticky bottom-5 w-full hidden cursor-pointer md:block">
 					<div className="flex items-center justify-center">
 						<Image width={50} height={50} className="w-10 h-10 rounded-full filter grayscale hover:grayscale-0 cursor-pointer" src={urlFor(pageInfo.personImage).url()} alt="personPhoto" />
 					</div>
